@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
   useEffect(() => {
     const initEmailJS = async () => {
       try {
-        await emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+        emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
         setEmailJSInitialized(true);
       } catch (error) {
         console.error('Error initializing EmailJS:', error);
@@ -37,7 +37,10 @@ const Contact: React.FC = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -61,9 +64,9 @@ const Contact: React.FC = () => {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          from_name: formData.name,
-          email_id: formData.email,
-          message: formData.message,
+          'user_name': formData.name,
+          'user_email': formData.email,
+          'message': formData.message,
           'g-recaptcha-response': recaptchaValue,
         }
       );
