@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
           <ul className="space-y-4">
             <li className="flex items-center">
               <Mail className="mr-2 text-neon-blue" />
-              <a href="mailto:sn003chandrakant@example.com" className="hover:text-neon-blue transition-colors duration-300">
+              <a href="mailto:sn003chandrakant@gmail.com" className="hover:text-neon-blue transition-colors duration-300">
                 sn003chandrakant@gmail.com
               </a>
             </li>
