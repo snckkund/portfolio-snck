@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import emailjs from 'emailjs-com';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [emailJSInitialized, setEmailJSInitialized] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, -50]);
@@ -45,6 +48,11 @@ const Contact: React.FC = () => {
       return;
     }
 
+    if (!recaptchaValue) {
+      alert('Please complete the reCAPTCHA');
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
@@ -56,16 +64,23 @@ const Contact: React.FC = () => {
           from_name: formData.name,
           email_id: formData.email,
           message: formData.message,
+          'g-recaptcha-response': recaptchaValue,
         }
       );
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
+      recaptchaRef.current?.reset();
+      setRecaptchaValue(null);
     } catch (error) {
       console.error('Error sending email:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleRecaptchaChange = (value: string | null) => {
+    setRecaptchaValue(value);
   };
 
   return (
@@ -81,7 +96,7 @@ const Contact: React.FC = () => {
             <li className="flex items-center">
               <Mail className="mr-2 text-neon-blue" />
               <a href="mailto:sn003chandrakant@example.com" className="hover:text-neon-blue transition-colors duration-300">
-                sn003chandrakant@example.com
+                sn003chandrakant@gmail.com
               </a>
             </li>
             <li className="flex items-center">
@@ -135,9 +150,17 @@ const Contact: React.FC = () => {
                 className="w-full bg-gray-700 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-neon-blue"
               ></textarea>
             </div>
+            <div className="mb-4">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                onChange={handleRecaptchaChange}
+                theme="dark"
+              />
+            </div>
             <button
               type="submit"
-              disabled={isSubmitting || !emailJSInitialized}
+              disabled={isSubmitting || !emailJSInitialized || !recaptchaValue}
               className="neon-button flex items-center justify-center w-full"
             >
               {isSubmitting ? 'Sending...' : (
