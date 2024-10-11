@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-blue: #00ffff;
+  --neon-pink: #ff00ff;
+  --neon-green: #00ff00;
+}
+
+body {
+  @apply bg-gray-900 text-white font-roboto;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+.neon-border {
+  box-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+}
+
+.neon-button {
+  @apply px-4 py-2 rounded-md transition-all duration-300 ease-in-out;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
+}
+
+.neon-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.neon-pulse {
+  animation: neonPulse 2s infinite;
+}
+
+@keyframes neonLine {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.neon-line::after {
+  content: '';
+  @apply block h-0.5 bg-blue-400;
+  animation: neonLine 1s ease-out forwards;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improved focus styles */
+*:focus {
+  outline: 2px solid var(--neon-blue);
+  outline-offset: 2px;
+}
+
+/* Responsive font sizes */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 18px;
+  }
+}
