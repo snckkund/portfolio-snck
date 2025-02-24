@@ -4,22 +4,28 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 
 const projects = [
   {
-    title: "Sentiment Analysis",
-    description: "A machine learning project for sentiment analysis of movie reviews using Python and scikit-learn.",
-    techStack: ["Python", "scikit-learn", "NLTK", "Pandas"],
-    github: "https://github.com/snckkund/Sentiment-Analysis",
+    title: "Geosynta",
+    description: "A Jupyter Notebook project focused on geospatial data analysis. It includes various data processing techniques and visualizations related to geographic information systems.",
+    techStack: ["Python", "Jupyter Notebook", "GIS", "Data Analysis"],
+    github: "https://github.com/snckkund/capstone-geosynta",
   },
   {
-    title: "Handwritten Digit Recognition",
-    description: "An AI project using Convolutional Neural Networks (CNN) to recognize handwritten digits from the MNIST dataset.",
-    techStack: ["Python", "TensorFlow", "Keras", "NumPy"],
-    github: "https://github.com/snckkund/Handwritten-Digit-Recognition",
+    title: "American Sign Language Detection",
+    description: "A project focused on recognizing and classifying American Sign Language gestures. It utilizes deep learning frameworks like TensorFlow and OpenCV for hand gesture recognition.",
+    techStack: ["Python", "TensorFlow", "OpenCV", "Deep Learning"],
+    github: "https://github.com/snckkund/ASL-Detection",
   },
   {
-    title: "Tic Tac Toe AI",
-    description: "An implementation of the Tic Tac Toe game with an AI opponent using the Minimax algorithm.",
-    techStack: ["Python", "Pygame"],
-    github: "https://github.com/snckkund/Tic-Tac-Toe-AI",
+    title: "Heart Disease Prediction",
+    description: "A project that utilizes machine learning techniques to predict heart disease from medical data. This project implements various ML models to analyze patient data and predict the likelihood of heart disease.",
+    techStack: ["Python", "Machine Learning", "Data Analysis", "Healthcare"],
+    github: "https://github.com/snckkund/Heart-Disease-Prediction",
+  },
+  {
+    title: "Facial Reconstruction from CCTV Footage",
+    description: "A project focused on reconstructing facial images from low-resolution CCTV footage using advanced algorithms. This project explores methods in computer vision and image processing to enhance facial recognition capabilities in surveillance systems.",
+    techStack: ["Computer Vision", "Image Processing", "Deep Learning", "OpenCV"],
+    github: "https://github.com/shivangichaudhary/Facial-reconstruction-from-CCTV-footage",
   },
 ]
 

@@ -4,19 +4,34 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 
 const achievements = [
   {
-    title: "First Place - National AI Hackathon",
-    description: "Developed an AI-powered solution for optimizing urban waste management.",
+    title: "Machine Learning Intern - Unified Mentor",
+    description: "Developed ML models for Vehicle Price Prediction, ASL Detection, and Heart Disease Prediction, improving model accuracy.",
     icon: <Trophy className="text-yellow-400" size={32} />,
   },
   {
-    title: "Best Paper Award - International Geospatial Conference",
-    description: "Presented research on using machine learning for predicting natural disasters.",
+    title: "Geosynta Project Lead",
+    description: "Led geospatial data analysis using Jupyter Notebook, implementing data processing and visualization techniques for GIS applications.",
+    icon: <Star className="text-green-400" size={32} />,
+  },
+  {
+    title: "ASL Detection System",
+    description: "Implemented deep learning models using TensorFlow and OpenCV to classify ASL gestures.",
     icon: <Award className="text-blue-400" size={32} />,
   },
   {
-    title: "Dean's List - 4 Consecutive Semesters",
-    description: "Maintained a GPA of 3.8 or higher for four semesters in a row.",
+    title: "Kidney Disease Classification",
+    description: "Developed a deep learning model for medical diagnosis, improving disease prediction accuracy.",
+    icon: <Trophy className="text-yellow-400" size={32} />,
+  },
+  {
+    title: "AI/ML Certifications",
+    description: "Completed ISRO-IIRS Geodata Analysis, NPTEL Cloud Computing (Elite), and University of Michigan's Applied ML certifications.",
     icon: <Star className="text-green-400" size={32} />,
+  },
+  {
+    title: "Competitive Programming",
+    description: "Active on LeetCode, GeeksforGeeks, and Code360, showcasing strong problem-solving skills in DSA and algorithms.",
+    icon: <Award className="text-blue-400" size={32} />,
   },
 ]
 
