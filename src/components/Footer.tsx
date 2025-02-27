@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-800 py-6">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-        <p className="text-sm mb-4 md:mb-0">&copy; 2024 SNCK Kund. All rights reserved.</p>
+        <p className="text-sm mb-4 md:mb-0">&copy; 2025 SNCK Kund. All rights reserved.</p>
         <div className="flex space-x-4">
           <a href="https://github.com/snckkund" target="_blank" rel="noopener noreferrer" className="text-white hover:text-neon-blue transition-colors duration-300">
             <Github size={20} />
