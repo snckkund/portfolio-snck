@@ -6,7 +6,7 @@ const skills = [
   { category: "Programming Languages", items: ["Python", "JavaScript", "Java", "C++"] },
   { category: "Machine Learning", items: ["TensorFlow", "Scikit-learn", "PyTorch", "Keras"] },
   { category: "Geospatial Technologies", items: ["ArcGIS", "QGIS", "Google Earth Engine", "GeoPandas"] },
-  { category: "Web Development", items: ["React", "Node.js", "HTML/CSS", "Flask"] },
+  { category: "Web Development", items: ["React", "Node.js", "HTML/CSS", "Flask", "FastApi"] },
   { category: "Databases", items: ["PostgreSQL", "MongoDB", "SQLite"] },
   { category: "Tools & Platforms", items: ["Git", "Docker", "AWS", "Jupyter Notebooks"] },
 ]

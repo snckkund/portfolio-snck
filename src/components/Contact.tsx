@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
             </li>
             <li className="flex items-center">
               <MapPin className="mr-2 text-neon-green" />
-              <span>VIT Bhopal University, Madhya Pradesh, India</span>
+              <span>Bangalore, India</span>
             </li>
           </ul>
         </div>

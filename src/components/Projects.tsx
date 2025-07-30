@@ -14,12 +14,14 @@ const projects = [
     description: "A project focused on recognizing and classifying American Sign Language gestures. It utilizes deep learning frameworks like TensorFlow and OpenCV for hand gesture recognition.",
     techStack: ["Python", "TensorFlow", "OpenCV", "Deep Learning"],
     github: "https://github.com/snckkund/ASL-Detection",
+    live: "https://huggingface.co/spaces/chandrakant06/ASL-Vision",
   },
   {
     title: "Heart Disease Prediction",
     description: "A project that utilizes machine learning techniques to predict heart disease from medical data. This project implements various ML models to analyze patient data and predict the likelihood of heart disease.",
     techStack: ["Python", "Machine Learning", "Data Analysis", "Healthcare"],
     github: "https://github.com/snckkund/Heart-Disease-Prediction",
+    live: "https://huggingface.co/spaces/chandrakant06/Heart-Disease-Prediction",
   },
   {
     title: "Facial Reconstruction from CCTV Footage",

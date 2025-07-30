@@ -2,22 +2,25 @@ import React from 'react'
 import { Award, Star, Trophy } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
-const achievements = [
+const experiences = [
   {
-    title: "Machine Learning Intern - Unified Mentor",
-    description: "Developed ML models for Vehicle Price Prediction, ASL Detection, and Heart Disease Prediction, improving model accuracy.",
+    title: "Project Intern — NARL(ISRO), AP (On-Site)",
+    description: "APR 2025 - JUL 2025: Worked on AI/ML-based analysis of magnetospheric energy and solar wind coupling and 2D TEC mapping techniques.",
     icon: <Trophy className="text-yellow-400" size={32} />,
   },
   {
-    title: "Geosynta Project Lead",
+    title: "Machine Learning Intern - Unified Mentor",
+    description: "FEB 2025 - APR 2025: Developed ML models for Vehicle Price Prediction, ASL Detection, and Heart Disease Prediction, improving model accuracy.",
+    icon: <Trophy className="text-yellow-400" size={32} />,
+  },
+  {
+    title: "Geosynta Project Lead (Final Year B.Tech Group Project)",
     description: "Led geospatial data analysis using Jupyter Notebook, implementing data processing and visualization techniques for GIS applications.",
     icon: <Star className="text-green-400" size={32} />,
   },
-  {
-    title: "ASL Detection System",
-    description: "Implemented deep learning models using TensorFlow and OpenCV to classify ASL gestures.",
-    icon: <Award className="text-blue-400" size={32} />,
-  },
+]
+
+const achievements = [
   {
     title: "Kidney Disease Classification",
     description: "Developed a deep learning model for medical diagnosis, improving disease prediction accuracy.",
@@ -27,6 +30,11 @@ const achievements = [
     title: "AI/ML Certifications",
     description: "Completed ISRO-IIRS Geodata Analysis, NPTEL Cloud Computing (Elite), and University of Michigan's Applied ML certifications.",
     icon: <Star className="text-green-400" size={32} />,
+  },
+  {
+    title: "ASL Detection System",
+    description: "Implemented deep learning models using TensorFlow and OpenCV to classify ASL gestures.",
+    icon: <Award className="text-blue-400" size={32} />,
   },
   {
     title: "Competitive Programming",
@@ -44,6 +52,13 @@ const Achievements: React.FC = () => {
       style={{ y }}
       className="container mx-auto px-4 py-16"
     >
+      <h2 className="text-4xl font-orbitron mb-8 neon-text neon-line">Experiences</h2>
+      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {experiences.map((experience, index) => (
+          <AchievementCard key={index} {...experience} />
+        ))}
+      </div>
+      <div className="my-16"></div>
       <h2 className="text-4xl font-orbitron mb-8 neon-text neon-line">Achievements</h2>
       <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {achievements.map((achievement, index) => (

@@ -50,7 +50,7 @@ const Home: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          Student at VIT Bhopal | Machine Learning & Geospatial Analysis Enthusiast
+          Student at Christ University Bangalore | Machine Learning & Geospatial Analysis Enthusiast
         </motion.p>
         <motion.div 
           className="flex justify-center space-x-4 mb-8"
